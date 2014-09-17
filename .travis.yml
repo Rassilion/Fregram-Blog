@@ -1,0 +1,13 @@
+language: python
+python: 2.7
+env:
+  global:
+    secure: "j/CRBcaNBaCrggJJyJflwovkd7ve4B7+VqV3XOloowSCh6i0AUjo4qT6EKuJkW20gm3FkTHljg20nATJdAxjEmlHQ82TGf2es9Ftm7at92uLOi4iL+wlHWwQZdPf1naviLCjW7+FqFFXhCXdghUeO6jDMy2fpsgiwrl/CTN2D5g="
+branches:
+  only:
+    - source
+install:
+  - "pip install -r requirements.txt"
+script:
+  - "make publish github"
+
