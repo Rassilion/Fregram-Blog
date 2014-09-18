@@ -1,36 +1,44 @@
 {% extends "base.html" %}
 {% block content_title %}{% endblock %}
+{% block content %}        
 
-{% block content %}
+{% if articles %}
+{% for article in articles_page.object_list %}        
 
-{% for article in articles %}
+{# First item #}
+{% if loop.first and not articles_page.has_previous() %}
 
-    {% if loop.index == 1 %}
-
-      <article>
-        <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
-        {{ article.content }}
-      </article>
-
-      <hr />
-
-      {% if loop.length  > 1 %}
-        <div>
-          <h3>Last posts</h3>
-          <ol class="archive">
-      {% endif %}
-    
-    {% elif loop.index < 7 %}
-      <li>
-        {% include 'article_link.inc.html' %}
-      </li>
+    <div class='article'>
+        <div class="content-title">
+            <a href="{{ SITEURL }}/{{ article.url }}"><h1>{{ article.title }}</h1></a>
+            {% include "metadata.html" %} 
+        </div>
+        
+        <div>{{ article.content }}</div>
+        <hr />
+    </div>
+		
+    {% if loop.length == 1 %}
+        {% include 'pagination.html' %}
     {% endif %}
 
-{% endfor %}
+{# other items #}
+{% else %} 
 
-{% if articles|length > 1 %}
-          </ol>
-        </div>
-{% endif %}
+    <div class='article'>
+        <a href="{{ SITEURL }}/{{ article.url }}"><h2>{{ article.title }}</h2></a>
+        <div class= "well small"> {% include "metadata.html" %} </div>
+        <div class="summary">{{ article.summary }} <a class="btn btn-info xsmall" href="{{ SITEURL }}/{{ article.url }}">read more</a></div>
+    </div>	
+				
+    {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %}
+        {% include 'pagination.html' %}
+    {% endif %}
+
+{% endif %} {# First item if #}
+
+{% endfor %} {# For article #}
+{% endif %} {# If articles #}
 
 {% endblock content %}
+
