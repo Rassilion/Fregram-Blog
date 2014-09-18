@@ -20,12 +20,12 @@ TRANSLATION_FEED_ATOM = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         
+		 )
 
 # Social widget
-SOCIAL = (('Rassilion\'s Github', 'https://github.com/Rassilion'),
-          ('Rassilion\'s Myanimelist', 'http://myanimelist.net/profile/Rassilion'),)
+SOCIAL = (('Github', 'https://github.com/Rassilion'),
+          )
 
 DEFAULT_PAGINATION = 10
 
