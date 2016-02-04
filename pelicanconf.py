@@ -41,7 +41,9 @@ GITHUB_SHOW_USER_LINK = False
 FEED_DOMAIN = SITEURL
 FEED_ATOM = 'atom.xml'
 
-AUTHORS_SAVE_AS = True
+AUTHORS_SAVE_AS = 'authors.html'
+CATEGORIES_SAVE_AS = 'categories.html'
+TAGS_SAVE_AS = 'tags.html'
 
 SITEMAP = {
         'format': 'xml',
