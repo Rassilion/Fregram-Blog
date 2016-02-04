@@ -13,12 +13,12 @@ from pelicanconf import *
 SITEURL = 'http://rassilion.github.io'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-THEME = 'pelican-theme'
+
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "rassilion"
-GOOGLE_ANALYTICS = "UA-3893406-11"
+GOOGLE_UNIVERSAL_ANALYTICS = "UA-3893406-11"
+GOOGLE_ANALYTICS_DISPLAY_FEATURES=True
+GOOGLE_UNIVERSAL_ANALYTICS_COOKIEDOMAIN="auto"
