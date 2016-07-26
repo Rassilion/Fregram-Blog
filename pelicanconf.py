@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Rassilion'
-SITENAME = u"Rassilion's Blog"
-SITEURL = ''
+SITENAME = u"Fregram Blog"
+SITEURL = 'http://fregram.com/'
 THEME = 'pelican-octopress-theme'
 PATH = 'content'
 FAVICON_FILENAME = 'favicon.ico'

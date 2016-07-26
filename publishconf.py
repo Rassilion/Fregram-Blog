@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://rassilion.github.io'
+SITEURL = 'http://fregram.com/'
 RELATIVE_URLS = False
 
 

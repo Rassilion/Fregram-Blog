@@ -30,7 +30,7 @@ Subsection Header
 
    a) Sub item that goes on at length and thus needs
       to be wrapped. Note the indentation that must
-      match the beginning of the text, not the 
+      match the beginning of the text, not the
       enumerator.
 
       i) List items can even include
@@ -47,7 +47,7 @@ Subsection Header
 
 We can use images:
 
-.. image:: dafuq.jpg
+.. image:: {filename}/images/han.jpg
 
 
 A sentence with links to Wikipedia_ and the `Linux kernel archive`_.
