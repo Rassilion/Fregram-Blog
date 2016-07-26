@@ -47,7 +47,7 @@ Subsection Header
 
 We can use images:
 
-.. image:: rassilion.github.io/content/dafuq.jpg
+.. image:: dafuq.jpg
 
 
 A sentence with links to Wikipedia_ and the `Linux kernel archive`_.
