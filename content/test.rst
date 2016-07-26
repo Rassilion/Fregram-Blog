@@ -47,7 +47,7 @@ Subsection Header
 
 We can use images:
 
-.. image:: {filename}/images/han.jpg
+.. image:: images/dafuq.jpg
 
 
 A sentence with links to Wikipedia_ and the `Linux kernel archive`_.
