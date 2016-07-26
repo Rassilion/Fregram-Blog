@@ -23,7 +23,11 @@ STATIC_PATHS = [
     'extra/CNAME'
 ]
 
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+EXTRA_PATH_METADATA = {
+    'extra/CNAME': {
+        'path': 'CNAME'
+        },
+    }
 
 
 
