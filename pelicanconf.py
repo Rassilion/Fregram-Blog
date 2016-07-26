@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Rassilion'
 SITENAME = u"Fregram Blog"
-SITEURL = 'http://fregram.com/'
+SITEURL = ''
 THEME = 'pelican-octopress-theme'
 PATH = 'content'
 FAVICON_FILENAME = 'favicon.ico'
