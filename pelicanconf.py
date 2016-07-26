@@ -7,7 +7,7 @@ SITENAME = u"Fregram Blog"
 SITEURL = ''
 THEME = 'pelican-octopress-theme'
 PATH = 'content'
-FAVICON_FILENAME = 'favicon.ico'
+FAVICON_FILENAME = 'favicon.png'
 
 TIMEZONE = 'Europe/Paris'
 
