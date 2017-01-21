@@ -9,7 +9,7 @@ THEME = 'pelican-octopress-theme'
 PATH = 'content'
 FAVICON_FILENAME = 'favicon.png'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Europe/Istanbul'
 
 DEFAULT_LANG = u'en'
 

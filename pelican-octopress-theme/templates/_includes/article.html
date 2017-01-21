@@ -10,14 +10,6 @@
     <p class="meta">
       {% include '_includes/article_time.html' %}
       {% include '_includes/article_stats.html' %}
-         &ndash; &#128339; Posted by <span class="fn">
-      {% if AUTHORS_SAVE_AS %}
-        <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-      {% else %}
-        {{ article.author }}
-      {% endif %}
-    </span>
-
     </p>
 </header>
 
