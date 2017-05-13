@@ -1,4 +1,5 @@
-title: New post teaser date: 2017-05-13 14:00 
+title: New post teaser
+date: 2017-05-13 14:00 
 tags: project, teaser 
 category: random 
 author: Rassilion 
