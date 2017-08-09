@@ -44,6 +44,8 @@ AUTHORS_SAVE_AS = 'authors.html'
 CATEGORIES_SAVE_AS = 'categories.html'
 TAGS_SAVE_AS = 'tags.html'
 
+SEARCH_BOX=False
+
 SITEMAP = {
         'format': 'xml',
         'priorities': {

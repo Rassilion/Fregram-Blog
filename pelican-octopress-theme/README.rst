@@ -1,8 +1,80 @@
 Octopress Theme for Pelican
 ===========================
 
-This is a theme for `Pelican`_ that looks like `Octopress`_ default theme. I wrote this
-theme for `my personal blog`_.
+This is a theme for `Pelican`_ that looks like `Octopress`_ default theme. This
+is a fork of `pelican-octopress-theme by Maurizio Sambati`_ which merged all
+pending pull requests from that repository and also merged new features from
+`pelipress by Jose Jimenez`_.
+
+Changelog
+---------
+
+5th Jun 2016
+
+- Add support for ``SITE_KEYWORDS``. Fixes
+  `issue #54 <https://github.com/duilio/pelican-octopress-theme/issues/54>`_
+- Update CSS style for rst footnote symbols so they appear as superscript text.
+  Fixes
+  `issue #26 <https://github.com/duilio/pelican-octopress-theme/issues/26>`_
+
+2nd Jun 2016
+
+- Add support for article and page translations. Fixes
+  `issue #89 <https://github.com/duilio/pelican-octopress-theme/issues/89>`_
+
+21st May 2016
+
+- Add ``DISPLAY_SOCIAL_ICONS`` setting and the ``social_icons`` sidebar
+  inspired by jjimenez/pelipress
+- Add ``FOOTER_INCLUDE`` setting inspired by jjimenezlopez/pelipress
+- Add ``SHOW_HEADER`` setting from jjimenezlopez/pelipress
+
+18th May 2016
+
+- Merge
+  `PR #88 <https://github.com/duilio/pelican-octopress-theme/pull/88>`_ -
+  Add header images and background colors. Fixes
+  `issue #52 <https://github.com/duilio/pelican-octopress-theme/issue/52>`_
+- Merge
+  `PR #87 <https://github.com/duilio/pelican-octopress-theme/pull/87>`_ -
+  Update documentation. Fixes
+  `issue #56 <https://github.com/duilio/pelican-octopress-theme/issue/56>`_
+- Merge
+  `PR #84 <https://github.com/duilio/pelican-octopress-theme/pull/84>`_ -
+  add INDEX_FULL_CONTENT setting
+- Merge
+  `PR #83 <https://github.com/duilio/pelican-octopress-theme/pull/84>`_ -
+  load scripts before plugins that might use them
+- Merge
+  `PR #82 <https://github.com/duilio/pelican-octopress-theme/pull/82>`_ -
+  Add ``disqus_identifier`` article metadata. Fixes
+  `issue #81 <https://github.com/duilio/pelican-octopress-theme/issue/81>`_
+- Merge
+  `PR #76 <https://github.com/duilio/pelican-octopress-theme/pull/76>`_ -
+  add support for Mailchimp newsletter registrations
+- Merge
+  `PR #73 <https://github.com/duilio/pelican-octopress-theme/pull/73>`_ -
+  add ``ARCHIVE_TITLE`` setting
+- Merge
+  `PR #72 <https://github.com/duilio/pelican-octopress-theme/pull/72>`_ -
+  add support for Google AdSense in sidebar
+- Merge
+  `PR #67 <https://github.com/duilio/pelican-octopress-theme/pull/67>`_ -
+  improved sidebar control with ``AUTHOR_ABOUT``, ``DISPLAY_CATEGORIES``,
+  ``DISPLAY_TAGS`` and ``DISPLAY_FEEDS`` settings. ``SIDEBAR_IMAGE`` is
+  only shown when ``AUTHOR_ABOUT`` is set!
+- Merge
+  `PR #55 <https://github.com/duilio/pelican-octopress-theme/pull/55>`_ -
+  add ``SHOW_ARTICLE_NEIGHBORS``, ``SHOW_DISQUS_COMMENT_COUNT``,
+  ``ARTICLE_ASIDES``, ``PAGE_ASIDES`` and ``INDEX_ASIDES`` settings
+- ``d6c3b15`` - fork from
+  `duilio/pelican-octopress-theme <https://github.com/duilio/pelican-octopress-theme/commit/d6c3b15>`_
+
+Commercial support
+------------------
+
+`Mr. Senko <http://MrSenko.com>`_ provides commercial support for this and
+other open source libraries, should you need it!
 
 Why use this theme?
 -------------------
@@ -63,6 +135,11 @@ Extra google plus options (default values are shown):
 - ``GOOGLE_PLUS_ONE``: ``False`` show +1 button
 - ``GOOGLE_PLUS_HIDDEN``: ``False`` hide the google plus sidebar link.
 
+Google AdSense Sidebar
+----------------------
+
+- ``GOOGLE_ADSENSE_CODE``: JavaScript `snippet <https://support.google.com/adsense/answer/181960>`_ to enable Google AdSense.
+
 Google Analytics
 -------------
 
@@ -71,16 +148,81 @@ Google Analytics
 - ``GOOGLE_UNIVERSAL_ANALYTICS_COOKIEDOMAIN``: ``'auto'`` optional cookie domain setting for Google Universal Analytics
 - ``GOOGLE_ANALYTICS_DISPLAY_FEATURES``: ``True`` to enable `Display Advertiser Features <https://support.google.com/analytics/answer/2444872?hl=en&utm_id=ad>`_. This setting works for both Classic Analytics and Universal Analytics.
 
-Sidebar image
--------------
+Sidebar
+-------
 
+- ``DISPLAY_CATEGORIES``: ``True`` show categories
+- ``DISPLAY_TAGS``: ``True`` show tags
+- ``DISPLAY_FEEDS``: ``True`` show feeds at the top in Social section. If you
+  want to display the feeds at the bottom (like jjimenez/pelipress did) set
+  this to ``False`` and add a link with name "RSS" and value the relevant URL
+  to ``SOCIAL``. The order in which links are defined is the order in which
+  they will be displayed!
+- ``DISPLAY_SOCIAL_ICONS``: set to ``True`` to display social icon images at
+  the top of sidebar. The link name from ``SOCIAL`` matches a FontsAwesome icon
 - ``SIDEBAR_IMAGE``: Adds specified image to sidebar. Example value: "images/author_photo.jpg"
 - ``SIDEBAR_IMAGE_ALT``: Alternative text for sidebar image
 - ``SIDEBAR_IMAGE_WIDTH``: Width of sidebar image
-
+- ``AUTHOR_ABOUT``: ```` the specified ``SIDEBAR_IMAGE`` is only shown if this is filled.
 - ``SEARCH_BOX``: set to true to enable site search box
 - ``SITESEARCH``: [default: 'http://google.com/search'] search engine to which
   search form should be pointed (optional)
+
+Controlling Asides
+------------------
+
+- ``ARTICLE_ASIDES``: a list of asides names, controls which asides and order
+  to be displayed on articles. If not set, all available asides will be shown.
+- ``PAGE_ASIDES``: just like above, but for pages.
+- ``INDEX_ASIDES``: just like above, but for the index page.
+
+Individual settings for article or page is available. Just add an ``asides`` in
+the corresponding article or page meta, the value is a list of asides names,
+separated by commas.
+
+Check ``templates/_includes/asides/`` to get the list of available asides. The
+asides name does not contain ``.html``. Example setting::
+
+    ARTICLE_ASIDES = ['recentpost', 'categories', 'tags', 'recentcomment', 'github']
+
+
+Header image or background color
+--------------------------------
+
+- ``header_cover`` - header background image. Configure as article metadata
+- ``HEADER_COVER`` - global header background image setting
+- ``header_color`` - header background color. Configure as article metadata
+- ``HEADER_COLOR`` - global header background color setting
+- ``SHOW_HEADER`` - set this to ``False`` to disable the entire header
+
+Custom footer
+-------------
+
+Define ``FOOTER_INCLUDE`` in ``pelicanconf.py`` to insert a custom footer text
+instead the default "Powered by Pelican". The value is a template path. You also
+need to define the ``EXTRA_TEMPLATES_PATHS`` setting. If your custom footer
+template is stored under the content ``PATH`` then Pelican will try to render
+it as regular HTML page and will most likely fail. To prevent Pelican from
+trying to render your custom footer add it to ``IGNORE_FILES``. Example::
+
+    FOOTER_INCLUDE = 'myfooter.html'
+    IGNORE_FILES = [FOOTER_INCLUDE]
+    EXTRA_TEMPLATES_PATHS = [os.path.dirname(__file__)]
+
+**WARNING:** avoid using names which duplicate existing templates from the
+theme directory, for example ``footer.html``. Due to how Pelican searches the
+template directories it will first find the files in the theme directory and you
+will not see the desired results!
+
+MailChimp
+--------------
+
+Add a `MailChimp <http://mailchimp.com>`_ registration form to the bottom of each article.
+
+- ``MAILCHIMP_FORM_ACTION``: URL to be called when the submit button is pressed, required.
+- ``MAILCHIMP_EMAIL_PLACEHOLDER``: placeholder for the email form field, default "email@example.com"
+- ``MAILCHIMP_SUBSCRIBE_BUTTON``: text shown on the subscribe button, default "Subscribe"
+- ``MAILCHIMP_CALL_TO_ACTION``: call-to-action to be shown above the form, default "Get more posts like this:"
 
 QR Code generation
 -------------
@@ -101,6 +243,17 @@ Disqus comments
 - ``DISQUS_SITENAME``: (required to enable) set this to the short site identifier
   of your Disqus site. Example:
   ``mrsenko``
+- ``SHOW_DISQUS_COMMENT_COUNT``: set this to ``True`` to show Disqus comments
+  count in article meta paragraph.
+
+Disqus Identifier
+-----------------
+
+If you are migrated from wordpress or any CMS to pelican, the disqus identifier is different there. In pelican the disqus identifier is URL of an article. So you will lose Disqus discussion for that article because Disqus identifier for that article is changed. To override the disqus identifier of an article
+
+- ``disqus_identifier``: set this property in your article meta data. Set it to any unique string you want. It won’t be affected by the article URL.
+
+If you choose not to use ``disqus_identifier``, defaults article URL passes to Disqus as identifier.  
 
 
 Isso self-hosted comments
@@ -117,6 +270,13 @@ website.
 **NOTE:** comments are displayed only if the article is not a draft and
 ``SITEURL`` is defined (usually is) and either one of ``DISQUS_SITENAME`` or
 ``ISSO_SITEURL`` are defined!
+
+Controlling comments
+--------------------
+
+By default, comments are enabled for all articles and disabled for pages.
+To enable comments for a page, add ``Comments: on`` in page meta.
+To disable comments for an article, add ``Comments: off`` in article meta.
 
 X min read
 ----------
@@ -159,7 +319,7 @@ the following metadata to each post:
                     shares.
 - ``twitter_site``: A Twitter handle, e.g. ``@getpelican`` for the owner
                     of the site.
-` ``twitter_creator``: A Twitter handle, e.g. ``@getpelican`` for the author
+- ``twitter_creator``: A Twitter handle, e.g. ``@getpelican`` for the author
                        of the post.
 
 In addition, you can provide a default post image (instead of setting
@@ -181,6 +341,26 @@ Archive Title
 
 - ``ARCHIVE_TITLE``: Custom page title for ``archives.html``. Default is
   ``"Blog Archive"``.
+
+Full Content
+------------
+
+Display full post content on the index page.
+
+- ``INDEX_FULL_CONTENT``: ``False``
+
+Neighboring Articles
+--------------------
+
+- ``SHOW_ARTICLE_NEIGHBORS``: set this to ``True`` to show "Previous Post" and
+  "Next Post" bellow article content in the article pages. The ``neighbors``
+  plugin is required for this feature.
+
+HTML Meta Tags
+--------------
+
+- ``SITE_KEYWORDS``: set this to a string which will be used in the HTML meta
+  tag for keywords.
 
 Contribute
 ----------
@@ -204,7 +384,7 @@ Authors
 .. _`Pelican`: http://getpelican.com
 .. _`Octopress`: http://octopress.org
 .. _`my personal blog`: http://blogs.skicelab.com/maurizio/
-.. _`the repository`: http://github.com/duilio/pelican-octopress-theme
+.. _`the repository`: http://github.com/MrSenko/pelican-octopress-theme
 .. _`Maurizio Sambati`: https://github.com/duilio
 .. _`Geoffrey Lehée`: https://github.com/socketubs
 .. _`Ekin Ertaç`: https://github.com/ekinertac
@@ -213,3 +393,5 @@ Authors
 .. _`Mortada Mehyar`: https://github.com/mortada
 .. _`Check the contributors`: https://github.com/duilio/pelican-octopress-theme/graphs/contributors
 .. _`Isso`: http://posativ.org/isso/
+.. _`pelican-octopress-theme by Maurizio Sambati`: https://github.com/duilio/pelican-octopress-theme
+.. _`pelipress by Jose Jimenez`: https://github.com/jjimenezlopez/pelipress

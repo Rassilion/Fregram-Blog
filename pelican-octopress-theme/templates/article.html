@@ -6,11 +6,15 @@
     {% include '_includes/article.html' %}
     <footer>
       {% include '_includes/article_infos.html' %}
+      {% include '_includes/article_neighbors.html' %}
       {% include '_includes/sharing.html' %}
+      {% include '_includes/mailchimp.html' %}
     </footer>
   </article>
 
-  {% if (DISQUS_SITENAME or ISSO_SITEURL) and SITEURL and article.status != "draft" %}
+  {% set comments = article.comments|default("on") %}
+  {% set comments = comments|string|lower|replace("true", "on")|replace("false", "off") %}
+  {% if comments != "off" and (DISQUS_SITENAME or ISSO_SITEURL) and SITEURL and article.status != "draft" %}
   <section>
     <h1>Comments</h1>
     {% if ISSO_SITEURL %}
