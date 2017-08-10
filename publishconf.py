@@ -12,7 +12,7 @@ from pelicanconf import *
 
 SITEURL = 'http://blog.fregram.com'
 RELATIVE_URLS = False
-
+ARTICLE_EXCLUDES = ['articles/drafts']
 
 DELETE_OUTPUT_DIRECTORY = True
 
