@@ -18,6 +18,8 @@ DEFAULT_LANG = u'en'
 
 EXTRA_PATH_METADATA = {
     'files/github/CNAME': {'path': 'CNAME'},
+    'files/github/robots.txt': {'path': 'robots.txt'},
+    'files/github/googlea64faded52c88e0b.html': {'path': 'googlea64faded52c88e0b.html'},
     'images/favicon.png': {'path': 'favicon.png'},
 }
 
