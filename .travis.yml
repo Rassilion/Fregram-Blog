@@ -1,8 +1,5 @@
 language: python
 python: 3.6
-env:
-  global:
-    secure: "M4wlt+AqAgLR0k0JD50XcJbTt7tx2DzUVXlmN/XHwrcHcvfbbB8ZeJh13tBg3vPlbclpOF1YufQXlBXgdBGgGqOecZVrWA5yXH8vP1X0qVRuoIplMSmtORtkUMYCydkEloz0BADQBdXMdYrL1sqqcaJZ0YVd9/rHkgyJT7no5pM="
 branches:
   only:
     - source
