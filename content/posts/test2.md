@@ -12,581 +12,403 @@ Some tests again, Pelican also supports markdown.
 
 Here's cheatsheat:
 
-# Typography
 
-## Headings
+| Number | Title                                    | Year |
+| ------ | ---------------------------------------- | ---: |
+| 1      | Harry Potter and the Philosopher’s Stone | 2001 |
+| 2      | Harry Potter and the Chamber of Secrets  | 2002 |
+| 3      | Harry Potter and the Prisoner of Azkaban | 2004 |
 
-Headings from `h1` through `h6` are constructed with a `#` for each level:
+[View raw (TEST.md)](https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md)
 
-``` markdown
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+This is a paragraph.
+
+    This is a paragraph.
+
+# Header 1
+
+## Header 2
+
+    Header 1
+    ========
+
+    Header 2
+    --------
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+    # Header 1
+    ## Header 2
+    ### Header 3
+    #### Header 4
+    ##### Header 5
+    ###### Header 6
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+    # Header 1 #
+    ## Header 2 ##
+    ### Header 3 ###
+    #### Header 4 ####
+    ##### Header 5 #####
+    ###### Header 6 ######
+
+> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+    > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+> ## This is a header.
+>
+> 1. This is the first list item.
+> 2. This is the second list item.
+>
+> Here's some example code:
+>
+>     Markdown.generate();
+
+    > ## This is a header.
+    > 1. This is the first list item.
+    > 2. This is the second list item.
+    >
+    > Here's some example code:
+    >
+    >     Markdown.generate();
+
+- Red
+- Green
+- Blue
+
+* Red
+* Green
+* Blue
+
+- Red
+- Green
+- Blue
+
+```markdown
+- Red
+- Green
+- Blue
+
+* Red
+* Green
+* Blue
+
+- Red
+- Green
+- Blue
 ```
 
-Renders to:
+- `code goes` here in this line
+- **bold** goes here
 
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-
-HTML:
-
-``` html
-<h1>h1 Heading</h1>
-<h2>h2 Heading</h2>
-<h3>h3 Heading</h3>
-<h4>h4 Heading</h4>
-<h5>h5 Heading</h5>
-<h6>h6 Heading</h6>
+```markdown
+- `code goes` here in this line
+- **bold** goes here
 ```
 
-<br>
-<br>
-<br>
+1. Buy flour and salt
+1. Mix together with water
+1. Bake
 
+```markdown
+1. Buy flour and salt
+1. Mix together with water
+1. Bake
+```
 
-## Horizontal Rules
+1. `code goes` here in this line
+1. **bold** goes here
 
-The HTML `<hr>` element is for creating a "thematic break" between paragraph-level elements. In markdown, you can create a `<hr>` with any of the following:
+```markdown
+1. `code goes` here in this line
+1. **bold** goes here
+```
 
-* `___`: three consecutive underscores
-* `---`: three consecutive dashes
-* `***`: three consecutive asterisks
+Paragraph:
 
-renders to:
+    Code
 
-___
+<!-- -->
+
+    Paragraph:
+
+        Code
 
 ---
 
-***
+---
 
+---
 
-<br>
-<br>
-<br>
+---
 
+---
 
-## Body Copy
+    * * *
 
-Body copy written as normal, plain text will be wrapped with `<p></p>` tags in the rendered HTML.
+    ***
 
-So this body copy:
+    *****
 
-``` markdown
-Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.
-```
-renders to this HTML:
+    - - -
 
-``` html
-<p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
-```
+    ---------------------------------------
 
+This is [an example](http://example.com "Example") link.
 
-<br>
-<br>
-<br>
+[This link](http://example.com) has no title attr.
 
+This is [an example][id] reference-style link.
 
-## Emphasis
+[id]: http://example.com "Optional Title"
 
-### Bold
-For emphasizing a snippet of text with a heavier font-weight.
+    This is [an example](http://example.com "Example") link.
 
-The following snippet of text is **rendered as bold text**.
+    [This link](http://example.com) has no title attr.
 
-``` markdown
-**rendered as bold text**
-```
-renders to:
+    This is [an example] [id] reference-style link.
 
-**rendered as bold text**
+    [id]: http://example.com "Optional Title"
 
-and this HTML
+_single asterisks_
 
-``` html
-<strong>rendered as bold text</strong>
-```
+_single underscores_
 
-### Italics
-For emphasizing a snippet of text with italics.
+**double asterisks**
 
-The following snippet of text is _rendered as italicized text_.
+**double underscores**
 
-``` markdown
-_rendered as italicized text_
-```
+    *single asterisks*
 
-renders to:
+    _single underscores_
 
-_rendered as italicized text_
+    **double asterisks**
 
-and this HTML:
+    __double underscores__
 
-``` html
-<em>rendered as italicized text</em>
-```
+This paragraph has some `code` in it.
 
+    This paragraph has some `code` in it.
 
-### strikethrough
-In GFM you can do strickthroughs.
+![Alt Text](https://placehold.it/200x50 "Image Title")
 
-``` markdown
-~~Strike through this text.~~
-```
-Which renders to:
+    ![Alt Text](https://placehold.it/200x50 "Image Title")
 
-~~Strike through this text.~~
 
 
-<br>
-<br>
-<br>
+Here will a live code example go:
 
-
-## Blockquotes
-For quoting blocks of content from another source within your document.
-
-Add `>` before any text you want to quote.
-
-``` markdown
-Add `>` before any text you want to quote.
-```
-
-Renders to:
-
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-
-and this HTML:
-
-``` html
-<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-</blockquote>
-```
-
-Blockquotes can also be nested:
-
-``` markdown
-> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
->> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
-odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
->>> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
-```
-
-Renders to:
-
-> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
->> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
-odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
->>> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
-
-
-<br>
-<br>
-<br>
-
-
-## Lists
-
-### Unordered
-A list of items in which the order of the items does not explicitly matter.
-
-You may use any of the following symbols to denote bullets for each list item:
-
-```markdown
-* valid bullet
-- valid bullet
-+ valid bullet
-```
-
-For example
-
-``` markdown
-+ Lorem ipsum dolor sit amet
-+ Consectetur adipiscing elit
-+ Integer molestie lorem at massa
-+ Facilisis in pretium nisl aliquet
-+ Nulla volutpat aliquam velit
-  - Phasellus iaculis neque
-  - Purus sodales ultricies
-  - Vestibulum laoreet porttitor sem
-  - Ac tristique libero volutpat at
-+ Faucibus porta lacus fringilla vel
-+ Aenean sit amet erat nunc
-+ Eget porttitor lorem
-```
-Renders to:
-
-+ Lorem ipsum dolor sit amet
-+ Consectetur adipiscing elit
-+ Integer molestie lorem at massa
-+ Facilisis in pretium nisl aliquet
-+ Nulla volutpat aliquam velit
-  - Phasellus iaculis neque
-  - Purus sodales ultricies
-  - Vestibulum laoreet porttitor sem
-  - Ac tristique libero volutpat at
-+ Faucibus porta lacus fringilla vel
-+ Aenean sit amet erat nunc
-+ Eget porttitor lorem
-
-And this HTML
-
-``` html
-<ul>
-  <li>Lorem ipsum dolor sit amet</li>
-  <li>Consectetur adipiscing elit</li>
-  <li>Integer molestie lorem at massa</li>
-  <li>Facilisis in pretium nisl aliquet</li>
-  <li>Nulla volutpat aliquam velit
-    <ul>
-      <li>Phasellus iaculis neque</li>
-      <li>Purus sodales ultricies</li>
-      <li>Vestibulum laoreet porttitor sem</li>
-      <li>Ac tristique libero volutpat at</li>
-    </ul>
-  </li>
-  <li>Faucibus porta lacus fringilla vel</li>
-  <li>Aenean sit amet erat nunc</li>
-  <li>Eget porttitor lorem</li>
-</ul>
-```
-
-### Ordered
-
-A list of items in which the order of items does explicitly matter.
-
-``` markdown
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-4. Facilisis in pretium nisl aliquet
-5. Nulla volutpat aliquam velit
-6. Faucibus porta lacus fringilla vel
-7. Aenean sit amet erat nunc
-8. Eget porttitor lorem
-```
-Renders to:
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-4. Facilisis in pretium nisl aliquet
-5. Nulla volutpat aliquam velit
-6. Faucibus porta lacus fringilla vel
-7. Aenean sit amet erat nunc
-8. Eget porttitor lorem
-
-And this HTML:
-
-``` html
-<ol>
-  <li>Lorem ipsum dolor sit amet</li>
-  <li>Consectetur adipiscing elit</li>
-  <li>Integer molestie lorem at massa</li>
-  <li>Facilisis in pretium nisl aliquet</li>
-  <li>Nulla volutpat aliquam velit</li>
-  <li>Faucibus porta lacus fringilla vel</li>
-  <li>Aenean sit amet erat nunc</li>
-  <li>Eget porttitor lorem</li>
-</ol>
-```
-
-**TIP**: If you just use `1.` for each number, GitHub will automatically number each item. For example:
-
-``` markdown
-1. Lorem ipsum dolor sit amet
-1. Consectetur adipiscing elit
-1. Integer molestie lorem at massa
-1. Facilisis in pretium nisl aliquet
-1. Nulla volutpat aliquam velit
-1. Faucibus porta lacus fringilla vel
-1. Aenean sit amet erat nunc
-1. Eget porttitor lorem
-```
-
-Renders to:
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-4. Facilisis in pretium nisl aliquet
-5. Nulla volutpat aliquam velit
-6. Faucibus porta lacus fringilla vel
-7. Aenean sit amet erat nunc
-8. Eget porttitor lorem
-
-
-<br>
-<br>
-<br>
-
-
-## Code
-
-### Inline code
-Wrap inline snippets of code with `` ` ``.
-
-For example, `<section></section>` should be wrapped as "inline".
-
-``` html
-For example, `<section></section>` should be wrapped as "inline".
-```
-
-
-### Indented code
-
-Or indent several lines of code by at least four spaces, as in:
-
-``` js
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-```
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-
-### Block code "fences"
-
-Use "fences"  ```` ``` ```` to block in multiple lines of code.
-
-```
-Sample text here...
-```
-
-HTML:
-
-``` html
-<pre>
-  <p>Sample text here...</p>
-</pre>
-```
-
-### Syntax highlighting
-
-GFM, or "GitHub Flavored Markdown" also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first code "fence", ` ``` js `, and syntax highlighting will automatically be applied in the rendered HTML. For example, to apply syntax highlighting to JavaScript code:
-
-Renders to:
-
-``` javascript
-grunt.initConfig({
-  assemble: {
-    options: {
-      assets: 'docs/assets',
-      data: 'src/data/*.{json,yml}',
-      helpers: 'src/custom-helpers.js',
-      partials: ['src/partials/**/*.{hbs,md}']
-    },
-    pages: {
-      options: {
-        layout: 'default.hbs'
-      },
-      files: {
-        './': ['src/templates/pages/index.hbs']
-      }
-    }
-  }
+```js react-live
+const onClick = () => {
+  alert("You opened me");
 };
+render(<button onClick={onClick}>Alohomora!</button>);
 ```
 
-And this complicated HTML:
+Here will a normal code block go:
 
-``` xml
-<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
-  <span class="nx">assemble</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">assets</span><span class="o">:</span> <span class="s1">'docs/assets'</span><span class="p">,</span>
-      <span class="nx">data</span><span class="o">:</span> <span class="s1">'src/data/*.{json,yml}'</span><span class="p">,</span>
-      <span class="nx">helpers</span><span class="o">:</span> <span class="s1">'src/custom-helpers.js'</span><span class="p">,</span>
-      <span class="nx">partials</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/partials/**/*.{hbs,md}'</span><span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nx">pages</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">layout</span><span class="o">:</span> <span class="s1">'default.hbs'</span>
-      <span class="p">},</span>
-      <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s1">'./'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/templates/pages/index.hbs'</span><span class="p">]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</pre></div>
+```js
+(function() {
+
+var cache = {};
+var form = $('form');
+var minified = true;
+
+var dependencies = {};
+
+var treeURL = 'https://api.github.com/repos/PrismJS/prism/git/trees/gh-pages?recursive=1';
+var treePromise = new Promise(function(resolve) {
+	$u.xhr({
+		url: treeURL,
+		callback: function(xhr) {
+			if (xhr.status < 400) {
+				resolve(JSON.parse(xhr.responseText).tree);
+			}
+		}
+	});
+});
 ```
 
+A code block with a JSDoc comment, short, and long comment:
 
-<br>
-<br>
-<br>
+```js
+/**
+ * Get value out of string (e.g. rem => px)
+ * If value is px strip the px part
+ * If the input is already a number only return that value
+ * @param {string | number} input
+ * @param {number} [rootFontSize]
+ * @return {number} Number without last three characters
+ * @example removeLastThree('6rem') => 6
+ */
+const getValue = (input, rootFontSize = 16) => {
+  if (typeof input === `number`) {
+    return input / rootFontSize;
+  }
 
+  const isPxValue = input.slice(-2) === `px`;
 
+  if (isPxValue) {
+    return parseFloat(input.slice(0, -2));
+  }
 
-## Tables
-Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.
+  return parseFloat(input.slice(0, -3));
+};
 
+// This is a little helper function
+const helper = (a, b) => a + b;
 
-``` markdown
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+// This is also a little helper function but this time with a really long one-line comment that should show some more details
+const morehelper = (a, b) => a * b;
+
+export { getValue, helper, morehelper };
 ```
 
-Renders to:
+Normal block without language:
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+```
+import Test from "../components/test"
 
-And this HTML:
+const Layout = ({ children }) => (
+  <Test>
+    {children}
+  </Test>
+)
 
-``` html
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>path to data files to supply the data that will be passed into templates.</td>
-  </tr>
-  <tr>
-    <td>engine</td>
-    <td>engine to be used for processing templates. Handlebars is the default.</td>
-  </tr>
-  <tr>
-    <td>ext</td>
-    <td>extension to be used for dest files.</td>
-  </tr>
-</table>
+export default Layout
 ```
 
-### Right aligned text
+Code block with code highlighting:
 
-Adding a colon on the right side of the dashes below any heading will right align text for that column.
+```jsx:title=src/components/post.jsx {5-7,10}
+import React from "react";
 
-``` markdown
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+const Post = ({ data: { post } }) => (
+  <Layout>
+    <Heading variant="h2" as="h2">
+      {post.title}
+    </Heading>
+    <p
+      sx={{
+        color: `secondary`,
+        mt: 3,
+        a: { color: `secondary` },
+        fontSize: [1, 1, 2],
+      }}
+    >
+      <span>{post.date}</span>
+      {post.tags && (
+        <React.Fragment>
+          {` — `}
+          <ItemTags tags={post.tags} />
+        </React.Fragment>
+      )}
+    </p>
+    <section
+      sx={{
+        ...CodeStyles,
+        my: 5,
+        ".gatsby-resp-image-wrapper": { my: 5, boxShadow: `lg` },
+      }}
+    >
+      <MDXRenderer>{post.body}</MDXRenderer>
+    </section>
+  </Layout>
+);
+
+export default Post;
 ```
 
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+Code block without title:
 
-
-<br>
-<br>
-<br>
-
-
-## Links
-
-### Basic link
-
-``` markdown
-[Assemble](http://assemble.io)
+```
+Harry Potter and the Philosopher's Stone
 ```
 
-Renders to (hover over the link, there is no tooltip):
+Code block without lineNumbers (but lang):
 
-[Assemble](http://assemble.io)
-
-HTML:
-
-``` html
-<a href="http://assemble.io">Assemble</a>
+```text noLineNumbers
+Harry Potter and the Chamber of Secrets
 ```
 
+Code block without lineNumbers (and without lang):
 
-### Add a title
-
-``` markdown
-[Upstage](https://github.com/upstage/ "Visit Upstage!")
+```noLineNumbers
+Harry Potter and the Chamber of Secrets
 ```
 
-Renders to (hover over the link, there should be a tooltip):
+Code block with only the title:
 
-[Upstage](https://github.com/upstage/ "Visit Upstage!")
-
-HTML:
-
-``` html
-<a href="https://github.com/upstage/" title="Visit Upstage!">Upstage</a>
+```:title=src/utils/scream.js
+const scream = (input) => window.alert(input)
 ```
 
-### Named Anchors
+Code block with only the title but without lineNumbers:
 
-Named anchors enable you to jump to the specified anchor point on the same page. For example, each of these chapters:
-
-```markdown
-# Table of Contents
-  * [Chapter 1](#chapter-1)
-  * [Chapter 2](#chapter-2)
-  * [Chapter 3](#chapter-3)
+```:title=src/utils/scream.js noLineNumbers
+const scream = (input) => window.alert(input)
 ```
-will jump to these sections:
 
-```markdown
-## Chapter 1 <a id="chapter-1"></a>
-Content for chapter one.
+Line highlighting without code title:
 
-## Chapter 2 <a id="chapter-2"></a>
-Content for chapter one.
-
-## Chapter 3 <a id="chapter-3"></a>
-Content for chapter one.
+```js {2,4-5}
+const test = 3;
+const foo = "bar";
+const harry = "potter";
+const hermione = "granger";
+const ron = "weasley";
 ```
-**NOTE** that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.
 
+Here will `inline code` go, just inside the text. Wow!
 
-<br>
-<br>
-<br>
+Code block without line numbers but with highlighting, language, and title:
 
+```tsx:title=src/components/blog.tsx {7-9,16} noLineNumbers
+import React from "react";
 
-## Images
-Images have a similar syntax to links but include a preceding exclamation point.
+const Blog = ({ posts }: PostsProps) => {
+  const { tagsPath, basePath } = useSiteMetadata();
 
-``` markdown
-![Minion](http://octodex.github.com/images/minion.png)
+  return (
+    <Layout>
+      <Flex sx={{ alignItems: `center`, justifyContent: `space-between` }}>
+        <Heading variant="h2" as="h2">
+          Blog
+        </Heading>
+        <Styled.a
+          as={Link}
+          sx={{ variant: `links.secondary` }}
+          to={`/${basePath}/${tagsPath}`.replace(/\/\/+/g, `/`)}
+        >
+          View all tags
+        </Styled.a>
+      </Flex>
+      <Listing posts={posts} sx={{ mt: [4, 5] }} />
+    </Layout>
+  );
+};
+
+export default Blog;
 ```
-![Minion](http://octodex.github.com/images/minion.png)
-
-or
-``` markdown
-![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-```
-![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-``` markdown
-![Alt text][id]
-```
-![Alt text][id]
-
