@@ -1,10 +1,12 @@
-language: python
-python: 3.6
-branches:
-  only:
-    - source
-install:
-  - "pip install -r requirements.txt"
-script:
-  - "make publish github"
-
+language: node_js
+before_script:
+  - npm install -g gatsby-cli
+node_js:
+  - "10"
+deploy:
+  provider: script
+  # Note: change "docs" to the directory where your gatsby-site lives, if necessary
+  script: npm i && npm run travis-deploy
+  skip_cleanup: true
+  on:
+    branch: master
