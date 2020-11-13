@@ -91,7 +91,7 @@ module.exports = {
               return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  data: edge.node.frontmatter.date,
+                  date: edge.node.frontmatter.date,
                   author: edge.node.frontmatter.author,
                   category:
                     edge.node.frontmatter.tags &&
@@ -135,6 +135,77 @@ module.exports = {
               }
               `,
             output: '/rss.xml',
+            title: `Fregram Blog`
+          }
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+              {
+                site {
+                  siteMetadata {
+                    siteTitle
+                    siteDescription
+                    siteUrl
+                    site_url: siteUrl
+                    description siteDescription
+                    title: siteTitle
+                  }
+                }
+              }
+            `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  author: edge.node.frontmatter.author,
+                  category:
+                    edge.node.frontmatter.tags &&
+                    edge.node.frontmatter.tags.join(','),
+                  title: edge.node.frontmatter.title,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.rawBody }]
+                });
+              });
+            },
+            query: `
+                {
+                  allMdx(
+                    limit: 1000,
+                    sort: { order: DESC, fields: [frontmatter___date] },
+                    filter: { fields: { type: { eq: "posts" } } }
+                  ) {
+                      edges {
+                          node {
+                            excerpt                               
+                            id
+                            fields {
+                              slug
+                              type
+                            }
+                            frontmatter {
+                              author
+                              title
+                              date
+                              link
+                              draft
+                              tags
+                            }
+                            rawBody
+                          }
+                        }
+                      
+                  }
+                }
+                `,
+            output: '/rss.md.xml',
             title: `Fregram Blog`
           }
         ]
