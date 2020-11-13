@@ -98,13 +98,17 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [
                     {
-                      'content:encoded': edge.node.html.replace(
-                        /<style((.|\n|\r)*?)<\/style>/gi,
-                        ''
-                      )
+                      'content:encoded': edge.node.html
+                        .replace(/<style((.|\n|\r)*?)<\/style>/gi, '')
+                        .replace(/class="(.*?)"/gi, '')
                     },
                     {
                       tags:
+                        edge.node.frontmatter.tags &&
+                        edge.node.frontmatter.tags.join(',')
+                    },
+                    {
+                      category:
                         edge.node.frontmatter.tags &&
                         edge.node.frontmatter.tags.join(',')
                     }

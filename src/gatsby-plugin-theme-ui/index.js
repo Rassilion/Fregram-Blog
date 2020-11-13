@@ -1,4 +1,5 @@
 import chronoblogTheme from 'gatsby-theme-chronoblog/src/gatsby-plugin-theme-ui';
+import codeStyle from '@theme-ui/prism/presets/oceanic-next.json';
 
 export default {
   ...chronoblogTheme,
@@ -41,5 +42,11 @@ export default {
     body: '-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace'
+  },
+  styles: {
+    ...chronoblogTheme.styles,
+    code: {
+      ...codeStyle
+    }
   }
 };
