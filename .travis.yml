@@ -6,6 +6,7 @@ node_js:
 deploy:
   provider: script
   # Note: change "docs" to the directory where your gatsby-site lives, if necessary
-  script: npm i && npm run travis-deploy
+  script: npm i --quiet && npm run travis-deploy
+  skip_cleanup: true
   on:
     branch: v2
