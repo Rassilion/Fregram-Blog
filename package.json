@@ -6,7 +6,7 @@
   "keywords": [],
   "scripts": {
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "travis-deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/$(TRAVIS_REPO_SLUG).git",
+    "travis-deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/Rassilion/Fregram-Blog.git",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "start": "gatsby develop"
