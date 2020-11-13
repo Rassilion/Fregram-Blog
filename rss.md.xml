@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Fregram Blog]]></title><description><![CDATA[Fregram Blog]]></description><link>https://blog.fregram.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Nov 2020 14:50:15 GMT</lastBuildDate><item><title><![CDATA[New updates on the horizon (hopefully)]]></title><description><![CDATA[Yes finally a new update to long awaited homeserver from last post! NO it's not that... Sad reality :( I'm looking to update blog to  Gatsby…]]></description><link>https://blog.fregram.com/new-updates-on-the-horizon-(hopefully)</link><guid isPermaLink="false">https://blog.fregram.com/new-updates-on-the-horizon-(hopefully)</guid><dc:creator><![CDATA[Rassilion]]></dc:creator><pubDate>Wed, 11 Nov 2020 00:00:00 GMT</pubDate><content:encoded>---
+title: New updates on the horizon (hopefully)
+slug: New updates on the horizon (hopefully)
+date: 2020-11-11
+tags: [&apos;project&apos;, &apos;teaser&apos; ]
+category: random 
+author: Rassilion 
+description: Yes finally a new update to long awaited homeserver from last post! NO it&apos;s not that...
+---
+&gt;Yes finally a new update to long awaited homeserver from last post! NO it&apos;s not that...
+
+Sad reality :(
+
+I&apos;m looking to update blog to [Gatsby.js](https://www.gatsbyjs.com/) and Https (I&apos;m using github pages why https not enabled?). With this updates I&apos;m expecting blog to reach new highs, I&apos;m not sure but maybe even I start writing something in it.
+
+PS: I hope automatic build system still works, because I don&apos;t remember build commands
+</content:encoded></item><item><title><![CDATA[New post teaser]]></title><description><![CDATA[The teaser everyone waiting for, yes I'm talking to you chinese search engine spiders. I don't think any human reading this blog but I can…]]></description><link>https://blog.fregram.com/new-post-teaser</link><guid isPermaLink="false">https://blog.fregram.com/new-post-teaser</guid><dc:creator><![CDATA[Rassilion]]></dc:creator><pubDate>Sat, 13 May 2017 00:00:00 GMT</pubDate><content:encoded>---
+title: New post teaser
+slug: New post teaser
+date: 2017-05-13
+tags: [&apos;project&apos;, &apos;teaser&apos; ]
+category: random 
+author: Rassilion 
+---
+The teaser everyone waiting for, yes I&apos;m talking to you chinese search engine spiders. I don&apos;t think any human reading this blog but I can be wrong (plz be wrong). But if none one reading blog why bother with  teaser, Motivation. This the ingenious plan to ensure compilation of next post. Make a teaser, then wait for motivation. Anyway, enough chit-chat my next post will be about this:
+
+![teaser](./teaser.jpg)
+
+Adding image was hard I need to find a easier way to do it. 
+</content:encoded></item><item><title><![CDATA[Just a Test 2]]></title><description><![CDATA[Some tests again, Pelican also supports markdown. Here's cheatsheat: Number Title Year 1 Harry Potter and the Philosopher’s Stone 2001…]]></description><link>https://blog.fregram.com/just-a-test-2</link><guid isPermaLink="false">https://blog.fregram.com/just-a-test-2</guid><dc:creator><![CDATA[Rassilion]]></dc:creator><pubDate>Thu, 05 Jan 2017 00:00:00 GMT</pubDate><content:encoded>---
+title: Just a Test 2
+slug: Just a Test 2
+date: 2017-01-05
+tags: [&apos;test&apos;, &apos;other&apos; ]
+category: random 
+author: Rassilion 
+description: Some tests again, Pelican also supports markdown.
+---
+
+Some tests again, Pelican also supports markdown.
+
+Here&apos;s cheatsheat:
+
+
+| Number | Title                                    | Year |
+| ------ | ---------------------------------------- | ---: |
+| 1      | Harry Potter and the Philosopher’s Stone | 2001 |
+| 2      | Harry Potter and the Chamber of Secrets  | 2002 |
+| 3      | Harry Potter and the Prisoner of Azkaban | 2004 |
+
+[View raw (TEST.md)](https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md)
+
+This is a paragraph.
+
+    This is a paragraph.
+
+# Header 1
+
+## Header 2
+
+    Header 1
+    ========
+
+    Header 2
+    --------
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+    # Header 1
+    ## Header 2
+    ### Header 3
+    #### Header 4
+    ##### Header 5
+    ###### Header 6
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+    # Header 1 #
+    ## Header 2 ##
+    ### Header 3 ###
+    #### Header 4 ####
+    ##### Header 5 #####
+    ###### Header 6 ######
+
+&gt; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+    &gt; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+&gt; ## This is a header.
+&gt;
+&gt; 1. This is the first list item.
+&gt; 2. This is the second list item.
+&gt;
+&gt; Here&apos;s some example code:
+&gt;
+&gt;     Markdown.generate();
+
+    &gt; ## This is a header.
+    &gt; 1. This is the first list item.
+    &gt; 2. This is the second list item.
+    &gt;
+    &gt; Here&apos;s some example code:
+    &gt;
+    &gt;     Markdown.generate();
+
+- Red
+- Green
+- Blue
+
+* Red
+* Green
+* Blue
+
+- Red
+- Green
+- Blue
+
+```markdown
+- Red
+- Green
+- Blue
+
+* Red
+* Green
+* Blue
+
+- Red
+- Green
+- Blue
+```
+
+- `code goes` here in this line
+- **bold** goes here
+
+```markdown
+- `code goes` here in this line
+- **bold** goes here
+```
+
+1. Buy flour and salt
+1. Mix together with water
+1. Bake
+
+```markdown
+1. Buy flour and salt
+1. Mix together with water
+1. Bake
+```
+
+1. `code goes` here in this line
+1. **bold** goes here
+
+```markdown
+1. `code goes` here in this line
+1. **bold** goes here
+```
+
+Paragraph:
+
+    Code
+
+&lt;!-- --&gt;
+
+    Paragraph:
+
+        Code
+
+---
+
+---
+
+---
+
+---
+
+---
+
+    * * *
+
+    ***
+
+    *****
+
+    - - -
+
+    ---------------------------------------
+
+This is [an example](http://example.com &quot;Example&quot;) link.
+
+[This link](http://example.com) has no title attr.
+
+This is [an example][id] reference-style link.
+
+[id]: http://example.com &quot;Optional Title&quot;
+
+    This is [an example](http://example.com &quot;Example&quot;) link.
+
+    [This link](http://example.com) has no title attr.
+
+    This is [an example] [id] reference-style link.
+
+    [id]: http://example.com &quot;Optional Title&quot;
+
+_single asterisks_
+
+_single underscores_
+
+**double asterisks**
+
+**double underscores**
+
+    *single asterisks*
+
+    _single underscores_
+
+    **double asterisks**
+
+    __double underscores__
+
+This paragraph has some `code` in it.
+
+    This paragraph has some `code` in it.
+
+![Alt Text](https://placehold.it/200x50 &quot;Image Title&quot;)
+
+    ![Alt Text](https://placehold.it/200x50 &quot;Image Title&quot;)
+
+
+
+Here will a live code example go:
+
+```js react-live
+const onClick = () =&gt; {
+  alert(&quot;You opened me&quot;);
+};
+render(&lt;button onClick={onClick}&gt;Alohomora!&lt;/button&gt;);
+```
+
+Here will a normal code block go:
+
+```js
+(function() {
+
+var cache = {};
+var form = $(&apos;form&apos;);
+var minified = true;
+
+var dependencies = {};
+
+var treeURL = &apos;https://api.github.com/repos/PrismJS/prism/git/trees/gh-pages?recursive=1&apos;;
+var treePromise = new Promise(function(resolve) {
+	$u.xhr({
+		url: treeURL,
+		callback: function(xhr) {
+			if (xhr.status &lt; 400) {
+				resolve(JSON.parse(xhr.responseText).tree);
+			}
+		}
+	});
+});
+```
+
+A code block with a JSDoc comment, short, and long comment:
+
+```js
+/**
+ * Get value out of string (e.g. rem =&gt; px)
+ * If value is px strip the px part
+ * If the input is already a number only return that value
+ * @param {string | number} input
+ * @param {number} [rootFontSize]
+ * @return {number} Number without last three characters
+ * @example removeLastThree(&apos;6rem&apos;) =&gt; 6
+ */
+const getValue = (input, rootFontSize = 16) =&gt; {
+  if (typeof input === `number`) {
+    return input / rootFontSize;
+  }
+
+  const isPxValue = input.slice(-2) === `px`;
+
+  if (isPxValue) {
+    return parseFloat(input.slice(0, -2));
+  }
+
+  return parseFloat(input.slice(0, -3));
+};
+
+// This is a little helper function
+const helper = (a, b) =&gt; a + b;
+
+// This is also a little helper function but this time with a really long one-line comment that should show some more details
+const morehelper = (a, b) =&gt; a * b;
+
+export { getValue, helper, morehelper };
+```
+
+Normal block without language:
+
+```
+import Test from &quot;../components/test&quot;
+
+const Layout = ({ children }) =&gt; (
+  &lt;Test&gt;
+    {children}
+  &lt;/Test&gt;
+)
+
+export default Layout
+```
+
+Code block with code highlighting:
+
+```jsx:title=src/components/post.jsx {5-7,10}
+import React from &quot;react&quot;;
+
+const Post = ({ data: { post } }) =&gt; (
+  &lt;Layout&gt;
+    &lt;Heading variant=&quot;h2&quot; as=&quot;h2&quot;&gt;
+      {post.title}
+    &lt;/Heading&gt;
+    &lt;p
+      sx={{
+        color: `secondary`,
+        mt: 3,
+        a: { color: `secondary` },
+        fontSize: [1, 1, 2],
+      }}
+    &gt;
+      &lt;span&gt;{post.date}&lt;/span&gt;
+      {post.tags &amp;&amp; (
+        &lt;React.Fragment&gt;
+          {` — `}
+          &lt;ItemTags tags={post.tags} /&gt;
+        &lt;/React.Fragment&gt;
+      )}
+    &lt;/p&gt;
+    &lt;section
+      sx={{
+        ...CodeStyles,
+        my: 5,
+        &quot;.gatsby-resp-image-wrapper&quot;: { my: 5, boxShadow: `lg` },
+      }}
+    &gt;
+      &lt;MDXRenderer&gt;{post.body}&lt;/MDXRenderer&gt;
+    &lt;/section&gt;
+  &lt;/Layout&gt;
+);
+
+export default Post;
+```
+
+Code block without title:
+
+```
+Harry Potter and the Philosopher&apos;s Stone
+```
+
+Code block without lineNumbers (but lang):
+
+```text noLineNumbers
+Harry Potter and the Chamber of Secrets
+```
+
+Code block without lineNumbers (and without lang):
+
+```noLineNumbers
+Harry Potter and the Chamber of Secrets
+```
+
+Code block with only the title:
+
+```:title=src/utils/scream.js
+const scream = (input) =&gt; window.alert(input)
+```
+
+Code block with only the title but without lineNumbers:
+
+```:title=src/utils/scream.js noLineNumbers
+const scream = (input) =&gt; window.alert(input)
+```
+
+Line highlighting without code title:
+
+```js {2,4-5}
+const test = 3;
+const foo = &quot;bar&quot;;
+const harry = &quot;potter&quot;;
+const hermione = &quot;granger&quot;;
+const ron = &quot;weasley&quot;;
+```
+
+Here will `inline code` go, just inside the text. Wow!
+
+Code block without line numbers but with highlighting, language, and title:
+
+```tsx:title=src/components/blog.tsx {7-9,16} noLineNumbers
+import React from &quot;react&quot;;
+
+const Blog = ({ posts }: PostsProps) =&gt; {
+  const { tagsPath, basePath } = useSiteMetadata();
+
+  return (
+    &lt;Layout&gt;
+      &lt;Flex sx={{ alignItems: `center`, justifyContent: `space-between` }}&gt;
+        &lt;Heading variant=&quot;h2&quot; as=&quot;h2&quot;&gt;
+          Blog
+        &lt;/Heading&gt;
+        &lt;Styled.a
+          as={Link}
+          sx={{ variant: `links.secondary` }}
+          to={`/${basePath}/${tagsPath}`.replace(/\/\/+/g, `/`)}
+        &gt;
+          View all tags
+        &lt;/Styled.a&gt;
+      &lt;/Flex&gt;
+      &lt;Listing posts={posts} sx={{ mt: [4, 5] }} /&gt;
+    &lt;/Layout&gt;
+  );
+};
+
+export default Blog;
+```
+</content:encoded></item><item><title><![CDATA[TC SRM144 DIV2 200pts C++]]></title><description><![CDATA[In this question we are given an integer, seconds. And the question asked us to return it in the  hours:minutes:seconds format. The given…]]></description><link>https://blog.fregram.com/tc-srm144-div2-200pts-c++</link><guid isPermaLink="false">https://blog.fregram.com/tc-srm144-div2-200pts-c++</guid><dc:creator><![CDATA[CharacterX]]></dc:creator><pubDate>Sat, 15 Mar 2014 00:00:00 GMT</pubDate><content:encoded>---
+title: TC SRM144 DIV2 200pts C++
+slug: TC SRM144 DIV2 200pts C++
+date: 2014-03-15
+tags: [&apos;topcoder&apos;, &apos;srm&apos;, &apos;C++&apos;, &apos;200point&apos; ]
+category: TopCoder 
+author: CharacterX 
+---
+
+In this question we are given an integer, seconds. And the question asked us to return it in the  hours:minutes:seconds format. The given integer, seconds, is between 0 and 86399.
+
+I defined 3 integers: hour, min, sec. I assigned seconds%60 to sec in order to find the remaining from its devision by 60. That will give me the sec part of the format because everything that can be divisible by 60 will be consumed by minutes and hours. After that i did the same to min and hour. While i was calculating hour, i didn&apos;t need to take its module because the input was between 0 and 86399 and it could not pass the value of 24.
+	
+The code is here:
+-----------------
+	
+```cpp
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Time{
+public:
+    string whatTime(int seconds)
+    {
+        int sec, hour, min;
+        sec=seconds%60;
+        min=(seconds/60)%60;
+        hour=seconds/3600;
+        return to_string(hour)+&quot;:&quot;+to_string(min)+&quot;:&quot;+to_string(sec);
+    }
+};
+```</content:encoded></item><item><title><![CDATA[TC SRM144 DIV2 200pts Python]]></title><description><![CDATA[Problem wants us to convert seconds integer to  Hour:Minute:Second  string format.]]></description><link>https://blog.fregram.com/tc-srm144-div2-200pts-python</link><guid isPermaLink="false">https://blog.fregram.com/tc-srm144-div2-200pts-python</guid><dc:creator><![CDATA[Rassilion]]></dc:creator><pubDate>Sat, 15 Mar 2014 00:00:00 GMT</pubDate><content:encoded>---
+title: TC SRM144 DIV2 200pts Python
+slug: TC SRM144 DIV2 200pts Python
+date: 2014-03-15
+tags: [&apos;topcoder&apos;, &apos;python&apos;, &apos;srm&apos;, &apos;200point&apos; ]
+category: TopCoder 
+author: Rassilion 
+---
+
+Problem wants us to convert seconds integer to `Hour:Minute:Second` string format.
+
+```python
+#class, function names and variables were given in the problem.
+class Time(object):
+def whatTime(self, seconds):
+    #I divided seconds by 3600 because 1 hour is 3600 second.
+    h = seconds / 3600
+    #I divided remaining from hour by 60
+    m = (seconds % 3600) / 60
+    #I find remaining from seconds division by 60,
+    #because everything that can be divisible by 60 will be used by hour and minute
+    s = (seconds % 60)
+    #Put them in H:M:S string format
+    return str(h)+&quot;:&quot;+str(m)+&quot;:&quot;+str(s)
+```</content:encoded></item></channel></rss>
