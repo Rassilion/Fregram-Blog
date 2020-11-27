@@ -1,6 +1,6 @@
 ---
 title: New post teaser
-slug: New post teaser
+slug: new-post-teaser
 date: 2017-05-13
 tags: ['project', 'teaser' ]
 category: random 
