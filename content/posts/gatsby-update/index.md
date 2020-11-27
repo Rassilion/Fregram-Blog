@@ -24,7 +24,7 @@ I used [Gatsby Starter Chronoblog](https://github.com/Chronoblog/gatsby-theme-ch
 ### Multiple Authors (sort of)
 Old blog was combined effort with my friend, I think there is only 1 post from him but I wanted to preserve it.
 
-first we need to add `author` field to  post fronmatter. So override `postQuery` in post template with creating `src\gatsby-theme-chronoblog\templates\post.js` file
+first we need to add `author` field to  post frontmatter. So override `postQuery` in post template with creating `src\gatsby-theme-chronoblog\templates\post.js` file
 
 ```js
 import { graphql } from 'gatsby';
