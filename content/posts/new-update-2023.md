@@ -9,6 +9,8 @@ description: Yes finally a new update to long awaited homeserver from last post!
 ---
 No it's still not the long awaited homeserver update (BTW I'm on the third (forth maybe) iteration onde homeserver updates, now I have a Terramaster NAS)
 
-Yes it's update time, our classic triennial updates. I'm not sure what to update :) maybe new gatsby version or [nextra](https://nextra.site/)
+Yes it's update time, our classic triennial updates. I'm not sure what to update :) maybe new gatsby 5, [nextra](https://nextra.site/) or [astro](https://astro.build/)
 
 Next.js looks controversial now but we can still use it right?
+
+PS: looks like travis not working, time to move github actions
