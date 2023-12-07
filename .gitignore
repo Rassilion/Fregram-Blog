@@ -53,9 +53,6 @@ yarn-error.log
 .pnp.js
 .yarn-integrity
 
-# lock
-yarn.lock
-package-lock.json
 
 # dotenv environment variables file
 .env
