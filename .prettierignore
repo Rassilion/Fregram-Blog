@@ -1,19 +1,13 @@
-.cache
-public
-.idea
-.vscode
-.DS_Store
-node_modules
-CHANGELOG.md
-*.toml
-results
-.github
-typings.d.ts
-index.d.ts
-www/src/webgl/uniforms.js
-cypress/e2e/build
-LICENSE
-*.txt
-**/static/**
-**/*.hbs
-coverage
+# Ignore everything
+/*
+
+# Except these files & folders
+!/src
+!/public
+!/.github
+!tsconfig.json
+!astro.config.ts
+!package.json
+!.prettierrc
+!.eslintrc.js
+!README.md
