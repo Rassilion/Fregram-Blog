@@ -5,7 +5,6 @@ export const SITE: Site = {
   author: "Rassilion",
   desc: "Fregram Blog, unmotivated authors and unfinished projects ...",
   title: "Fregram Blog",
-  ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 15,
 };
