@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import PostList from '../components/PostList.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortPosts } from '../lib/posts';
+
+const posts = sortPosts(await getCollection('posts')).filter((post) => post.data.tags.includes('project'));
+---
+
+<BaseLayout title="Projects" description="Project posts from Fregram Blog">
+  <h1>Projects</h1>
+  <PostList posts={posts} />
+</BaseLayout>

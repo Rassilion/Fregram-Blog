@@ -1,0 +1,51 @@
+---
+import type { Post } from '../lib/posts';
+import { formatDate, postUrl } from '../lib/posts';
+
+interface Props { posts: Post[]; searchable?: boolean; }
+const { posts, searchable = false } = Astro.props;
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
+const tagCounts = new Map(tags.map((tag) => [tag, posts.filter((post) => post.data.tags.includes(tag)).length]));
+let previousYear: number | undefined;
+---
+
+{searchable && <div class="controls"><span class="search-icon" aria-hidden="true">🔍</span><input id="post-search" type="search" placeholder="search" aria-label="Search posts" /></div>}
+{searchable && <div class="tag-list tag-filters">{tags.map((tag) => <button class="tag" type="button" data-tag={tag}><span>#{tag}</span><strong>{tagCounts.get(tag)}</strong></button>)}</div>}
+<ul class="post-list" id="post-list">
+  {posts.map((post, index) => {
+    const year = post.data.date.getFullYear();
+    const showYear = previousYear !== undefined && year !== previousYear;
+    previousYear = year;
+    return (
+      <>
+        {showYear && <li class="year-separator" data-year-separator={index}>{year}</li>}
+        <li class="post-card" data-card-index={index} data-search={`${post.data.title} ${post.data.description ?? ''} ${post.data.tags.join(' ')}`.toLowerCase()}>
+          <h2><a href={postUrl(post)}>{post.data.title}</a></h2>
+          <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+          {post.data.description && <p>{post.data.description}</p>}
+          <a class="read-more" href={postUrl(post)}>read more →</a>
+          <div class="tag-list">{post.data.tags.map((tag) => <span class="tag">#{tag} <strong>{tagCounts.get(tag)}</strong></span>)}</div>
+        </li>
+      </>
+    );
+  })}
+</ul>
+{searchable && <script>
+  const input = document.querySelector<HTMLInputElement>('#post-search');
+  const cards = [...document.querySelectorAll<HTMLElement>('.post-card')];
+  const separators = [...document.querySelectorAll<HTMLElement>('.year-separator')];
+  const filter = (value: string) => {
+    cards.forEach((card) => card.hidden = !(card.dataset.search ?? '').includes(value.toLowerCase()));
+    separators.forEach((separator) => {
+      const start = Number(separator.dataset.yearSeparator);
+      const next = separators.find((item) => Number(item.dataset.yearSeparator) > start);
+      const end = next ? Number(next.dataset.yearSeparator) : cards.length;
+      separator.hidden = !cards.slice(start, end).some((card) => !card.hidden);
+    });
+  };
+  input?.addEventListener('input', () => filter(input.value));
+  document.querySelectorAll<HTMLButtonElement>('[data-tag]').forEach((button) => button.addEventListener('click', () => {
+    if (input) input.value = button.dataset.tag ?? '';
+    filter(button.dataset.tag ?? '');
+  }));
+</script>}

@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, postSlug, type Post } from '../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('posts')).filter((post) => !post.data.draft);
+  return posts.map((post) => ({ params: { slug: postSlug(post) }, props: { post } }));
+}
+
+interface Props { post: Post; }
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article>
+    <header class="post-header">
+      <h1>{post.data.title}</h1>
+      <p class="muted"><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time> · {post.data.author}</p>
+      <div class="tag-list">{post.data.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+    </header>
+    <div class="prose"><Content /></div>
+    <footer class="post-footer">
+      {post.data.author !== 'Rassilion' && <p>Written by {post.data.author}</p>}
+      <a href="/">← Back to all posts</a>
+    </footer>
+    <section id="disqus_thread" aria-label="Comments"></section>
+    <script is:inline define:vars={{ pageUrl: new URL(Astro.url.pathname, Astro.site).href, pageId: post.id, pageTitle: post.data.title }}>
+      window.disqus_config = function () {
+        this.page.url = pageUrl;
+        this.page.identifier = pageId;
+        this.page.title = pageTitle;
+      };
+      const script = document.createElement('script');
+      script.src = 'https://fregramblog.disqus.com/embed.js';
+      script.setAttribute('data-timestamp', String(Date.now()));
+      document.body.appendChild(script);
+    </script>
+  </article>
+</BaseLayout>

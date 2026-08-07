@@ -30,6 +30,8 @@ examples/biz-website/public/
 examples/blog/public/
 *.un~
 dist
+.astro
+.npm-cache
 bin/published.js
 
 # Build Path of Test Fixtures
