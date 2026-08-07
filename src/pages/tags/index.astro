@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortPosts, tagUrl } from '../../lib/posts';
+
+const posts = sortPosts(await getCollection('posts'));
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))]
+  .map((tag) => ({ tag, count: posts.filter((post) => post.data.tags.includes(tag)).length }))
+  .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+---
+
+<BaseLayout title="Tags" description="Browse Fregram Blog by topic">
+  <h1>Tags</h1>
+  <div class="tag-list tag-directory">{tags.map(({ tag, count }) => <a class="tag" href={tagUrl(tag)}>#{tag} <strong>{count}</strong></a>)}</div>
+</BaseLayout>

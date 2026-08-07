@@ -12,10 +12,16 @@
         "check": "astro check"
     },
     "dependencies": {
-        "@astrojs/rss": "^4.0.12",
-        "astro": "^5.12.0"
+        "@astrojs/rss": "^4.0.19",
+        "@astrojs/sitemap": "^3.7.3",
+        "@resvg/resvg-js": "^2.6.2",
+        "astro": "^7.2.0"
     },
     "engines": {
-        "node": ">=24.0.0"
+        "node": ">=24.0.0 <25.0.0"
+    },
+    "devDependencies": {
+        "@astrojs/check": "^0.9.10",
+        "typescript": "^6.0.3"
     }
 }

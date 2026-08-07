@@ -302,7 +302,7 @@ export default Layout
 
 Code block with code highlighting:
 
-```jsx:title=src/components/post.jsx {5-7,10}
+```jsx title="src/components/post.jsx" {5-7,10}
 import React from "react";
 
 const Post = ({ data: { post } }) => (
@@ -349,25 +349,25 @@ Harry Potter and the Philosopher's Stone
 
 Code block without lineNumbers (but lang):
 
-```text noLineNumbers
+```text
 Harry Potter and the Chamber of Secrets
 ```
 
 Code block without lineNumbers (and without lang):
 
-```noLineNumbers
+```text
 Harry Potter and the Chamber of Secrets
 ```
 
 Code block with only the title:
 
-```:title=src/utils/scream.js
+```text title="src/utils/scream.js"
 const scream = (input) => window.alert(input)
 ```
 
 Code block with only the title but without lineNumbers:
 
-```:title=src/utils/scream.js noLineNumbers
+```text title="src/utils/scream.js"
 const scream = (input) => window.alert(input)
 ```
 
@@ -385,7 +385,7 @@ Here will `inline code` go, just inside the text. Wow!
 
 Code block without line numbers but with highlighting, language, and title:
 
-```tsx:title=src/components/blog.tsx {7-9,16} noLineNumbers
+```tsx title="src/components/blog.tsx" {7-9,16}
 import React from "react";
 
 const Blog = ({ posts }: PostsProps) => {

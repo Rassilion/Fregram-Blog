@@ -1,29 +1,62 @@
 ---
 import { getCollection, render } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { formatDate, postSlug, type Post } from '../lib/posts';
+import { formatDate, postSlug, postUrl, readingTime, relatedPosts, sortPosts, tagUrl, type Post } from '../lib/posts';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('posts')).filter((post) => !post.data.draft);
-  return posts.map((post) => ({ params: { slug: postSlug(post) }, props: { post } }));
+  const posts = (await getCollection('posts')).filter((post: Post) => !post.data.draft);
+  return posts.map((post: Post) => ({ params: { slug: postSlug(post) }, props: { post } }));
 }
 
 interface Props { post: Post; }
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const posts = sortPosts(await getCollection('posts'));
+const index = posts.findIndex((candidate) => candidate.id === post.id);
+const newer = index > 0 ? posts[index - 1] : undefined;
+const older = index < posts.length - 1 ? posts[index + 1] : undefined;
+const related = relatedPosts(post, posts);
+const minutes = readingTime(post);
+const ogImage = `/og/${postSlug(post)}.png`;
+const canonical = new URL(postUrl(post), Astro.site).href;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  author: { '@type': 'Person', name: post.data.author },
+  mainEntityOfPage: canonical,
+  image: new URL(ogImage, Astro.site).href,
+  keywords: post.data.tags.join(', ')
+};
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.data.title} description={post.data.description} image={ogImage} type="article" publishedTime={post.data.date.toISOString()} author={post.data.author}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <article>
     <header class="post-header">
       <h1>{post.data.title}</h1>
-      <p class="muted"><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time> · {post.data.author}</p>
-      <div class="tag-list">{post.data.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+      <p class="muted"><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time> · {post.data.author} · {minutes} min read</p>
+      <div class="tag-list">{post.data.tags.map((tag: string) => <a class="tag" href={tagUrl(tag)}>#{tag}</a>)}</div>
     </header>
+    {headings.length > 1 && <nav class="toc" aria-label="Table of contents">
+      <strong>On this page</strong>
+      <ol>{headings.filter((heading: MarkdownHeading) => heading.depth <= 3).map((heading: MarkdownHeading) => <li class={`depth-${heading.depth}`}><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol>
+    </nav>}
     <div class="prose"><Content /></div>
     <footer class="post-footer">
       {post.data.author !== 'Rassilion' && <p>Written by {post.data.author}</p>}
-      <a href="/">← Back to all posts</a>
+      <nav class="post-navigation" aria-label="Post navigation">
+        <div>{older && <><span>Older</span><a href={postUrl(older)}>← {older.data.title}</a></>}</div>
+        <div>{newer && <><span>Newer</span><a href={postUrl(newer)}>{newer.data.title} →</a></>}</div>
+      </nav>
+      {related.length > 0 && <section class="related-posts">
+        <h2>Related posts</h2>
+        <ul>{related.map((item) => <li><a href={postUrl(item)}>{item.data.title}</a></li>)}</ul>
+      </section>}
+      <p><a href="/">← Back to all posts</a></p>
     </footer>
     <section id="disqus_thread" aria-label="Comments"></section>
     <script is:inline define:vars={{ pageUrl: new URL(Astro.url.pathname, Astro.site).href, pageId: post.id, pageTitle: post.data.title }}>

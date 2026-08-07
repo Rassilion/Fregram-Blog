@@ -14,3 +14,9 @@ npm run dev
 Run `npm run build` to create the production site in `dist/`. Posts live in
 `content/posts`; their frontmatter is validated by the Astro content collection
 schema in `src/content.config.ts`.
+
+Run `npm run check` before committing to validate Astro templates and TypeScript.
+The deployment workflow performs a full static build before publishing.
+
+The site includes tag archives, RSS, a generated sitemap, per-post social images,
+structured metadata, a web app manifest, and an analytics consent preference.

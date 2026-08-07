@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import PostList from '../components/PostList.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortPosts } from '../lib/posts';
+const latest = sortPosts(await getCollection('posts')).slice(0, 3);
+---
+
+<BaseLayout title="Page not found" description="This page could not be found">
+  <section class="not-found">
+    <p class="error-code">404</p>
+    <h1>Project unfinished, page missing.</h1>
+    <p class="muted">The URL may be from an older version of the blog. Try a search or one of the latest posts.</p>
+    <p><a class="button-link" href="/">Search all posts</a></p>
+  </section>
+  <h2>Latest posts</h2>
+  <PostList posts={latest} />
+</BaseLayout>

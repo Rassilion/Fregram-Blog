@@ -1,18 +1,18 @@
 ---
 import type { Post } from '../lib/posts';
-import { formatDate, postUrl } from '../lib/posts';
+import { formatDate, postUrl, tagUrl } from '../lib/posts';
 
 interface Props { posts: Post[]; searchable?: boolean; }
-const { posts, searchable = false } = Astro.props;
-const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
-const tagCounts = new Map(tags.map((tag) => [tag, posts.filter((post) => post.data.tags.includes(tag)).length]));
+const { posts, searchable = false }: Props = Astro.props;
+const tags = [...new Set(posts.flatMap((post: Post) => post.data.tags))].sort();
+const tagCounts = new Map(tags.map((tag: string) => [tag, posts.filter((post: Post) => post.data.tags.includes(tag)).length]));
 let previousYear: number | undefined;
 ---
 
 {searchable && <div class="controls"><span class="search-icon" aria-hidden="true">🔍</span><input id="post-search" type="search" placeholder="search" aria-label="Search posts" /></div>}
 {searchable && <div class="tag-list tag-filters">{tags.map((tag) => <button class="tag" type="button" data-tag={tag}><span>#{tag}</span><strong>{tagCounts.get(tag)}</strong></button>)}</div>}
 <ul class="post-list" id="post-list">
-  {posts.map((post, index) => {
+  {posts.map((post: Post, index: number) => {
     const year = post.data.date.getFullYear();
     const showYear = previousYear !== undefined && year !== previousYear;
     previousYear = year;
@@ -24,7 +24,7 @@ let previousYear: number | undefined;
           <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
           {post.data.description && <p>{post.data.description}</p>}
           <a class="read-more" href={postUrl(post)}>read more →</a>
-          <div class="tag-list">{post.data.tags.map((tag) => <span class="tag">#{tag} <strong>{tagCounts.get(tag)}</strong></span>)}</div>
+          <div class="tag-list">{post.data.tags.map((tag: string) => <a class="tag" href={tagUrl(tag)}>#{tag} <strong>{tagCounts.get(tag)}</strong></a>)}</div>
         </li>
       </>
     );
