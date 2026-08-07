@@ -1,0 +1,18 @@
+{
+  "name": "Fregram Blog",
+  "short_name": "Fregram",
+  "description": "Unmotivated authors and unfinished projects ...",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0e0f17",
+  "theme_color": "#3a5f7d",
+  "icons": [
+    {
+      "src": "/avatar.png",
+      "sizes": "480x480",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
