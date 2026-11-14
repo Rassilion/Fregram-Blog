@@ -34,7 +34,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
 a { color: var(--primary); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 img { max-width: 100%; height: auto; border-radius: 6px; }
-.shell { width: min(738px, calc(100% - 2rem)); margin: 0 auto; }
+.shell { width: min(860px, calc(100% - 2rem)); margin: 0 auto; }
 .site-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0 2.25rem; }
 .main-links, .header-actions { display: flex; align-items: center; gap: 1rem; }
 .main-links a { color: var(--text); font-weight: 700; text-decoration: none; }
